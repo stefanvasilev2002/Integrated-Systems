@@ -1,0 +1,33 @@
+﻿@model Lab1.Domain.Concert
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center mb-4">Concert Details</h1>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Concert Information</h4>
+                    <dl class="row">
+                        <dt class="col-sm-4">Concert Name:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ConcertName)</dd>
+                        <dt class="col-sm-4">Concert Date:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ConcertDate)</dd>
+                        <dt class="col-sm-4">Concert Price:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ConcertPrice)</dd>
+                        <dt class="col-sm-4">Concert Place:</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.ConcertPlace)</dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

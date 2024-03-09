@@ -1,0 +1,34 @@
+﻿@model Lab1.Domain.Ticket
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Delete Ticket</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Are you sure you want to delete this ticket?</h4>
+                    <hr />
+                    <h4>Ticket Information</h4>
+                    <dl class="row">
+                        <dt class="col-sm-4">Number of People</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.NumberOfPeople)</dd>
+                        <dt class="col-sm-4">Concert</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Concert.ConcertName)</dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Lab1.Domain.Ticket>
+
+@{
+    ViewData["Title"] = "Tickets";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="container">
+        <h1 class="text-center mb-4">Tickets</h1>
+
+        <div class="text-center mb-4">
+            <a asp-action="Create" class="btn btn-success">Create New</a>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.NumberOfPeople)</th>
+                            <th>@Html.DisplayNameFor(model => model.Concert)</th>
+                            <th>@Html.DisplayNameFor(model => model.ConcertUser.Email)</th>
+                            <th>Sum money</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Where(t => t.ConcertUser != null && t.ConcertUser.Email == User.Identity.Name))
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.NumberOfPeople)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Concert.ConcertName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ConcertUser.Email)</td>
+                                <td>@(item.NumberOfPeople * item.Concert.ConcertPrice) EUR</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="text-center">
+        <h3>Please <a href="/Identity/Account/Login">log in</a> to view your tickets.</h3>
+    </div>
+}

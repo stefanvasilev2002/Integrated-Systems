@@ -27,7 +27,7 @@ public class Repository<T> : IRepository<T> where T : BaseEntity
         return entity;
     }
 
-    public T Get(Guid? id)
+    public T GetById(Guid? id)
     {
         if (id == null)
         {

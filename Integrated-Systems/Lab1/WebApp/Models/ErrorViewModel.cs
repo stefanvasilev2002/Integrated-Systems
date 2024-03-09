@@ -1,4 +1,4 @@
-namespace Lab1.Domain;
+namespace WebApp.Models;
 
 public class ErrorViewModel
 {

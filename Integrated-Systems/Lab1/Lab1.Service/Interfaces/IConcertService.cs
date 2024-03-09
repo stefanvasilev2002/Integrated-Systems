@@ -1,4 +1,4 @@
-using Domain;
+using Lab1.Domain;
 
 namespace Lab1.Service.Interfaces;
 

@@ -1,8 +1,8 @@
-using EShop.Data;
 using Lab1.Domain;
+using Lab1.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lab1.Repository;
+namespace Lab1.Repository.Implementation;
 
 public class Repository<T> : IRepository<T> where T : BaseEntity
 {

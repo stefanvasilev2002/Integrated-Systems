@@ -1,6 +1,4 @@
-﻿using Lab1.Domain;
-
-namespace Domain;
+﻿namespace Lab1.Domain;
 
 public class Concert : BaseEntity
 {

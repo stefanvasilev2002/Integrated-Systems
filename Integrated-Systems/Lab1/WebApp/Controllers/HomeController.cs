@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using EShop.Models;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Models;
 
-namespace EShop.Controllers;
+namespace WebApp.Controllers;
 
 public class HomeController : Controller
 {

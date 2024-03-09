@@ -1,5 +1,6 @@
-﻿using Domain;
+﻿using Lab1.Domain;
 using Lab1.Repository;
+using Lab1.Repository.Interface;
 using Lab1.Service.Interfaces;
 
 namespace Lab1.Service.Implementations;
